@@ -1,7 +1,8 @@
 <h1> Restaurants </h1>
 
+<div class="cards">
 <% @restaurants.each do |restaurant| %>
-      <ul>
+      <ul class="card card-shadow">
         <li><%= restaurant.name %> - <%= link_to "details", restaurant_path(restaurant) %></li>
         <li><%= restaurant.address %></li>
         <li><%= restaurant.phone_number %></li>
@@ -9,4 +10,4 @@
        <!-- <li><%= restaurant.reviews %></li> -->
       </ul>
     <% end %>
-
+</div>

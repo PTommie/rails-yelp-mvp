@@ -1,7 +1,9 @@
-<p> <%= @restaurant.name %> </p>
-<p> <%= @restaurant.address %> </p>
-<p> <%= @restaurant.phone_number %> </p>
-<p> <%= @restaurant.category %> </p>
+
+<div class="restaurant-cards card-shadow">
+  <h1> Name: <%= @restaurant.name %> </h1>
+  <p> <i class="fas fa-map-marker"></i> <%= @restaurant.address %> </p>
+  <p> <i class="fas fa-phone"></i> <%= @restaurant.phone_number %> </p>
+  <p> <i class="fas fa-mortar-pestle"></i> <%= @restaurant.category %> </p>
 
 <ul>
   <% @restaurant.reviews.each do |review| %>
@@ -9,5 +11,8 @@
     <li> <%= review.rating %> </li>
   <% end %>
 </ul>
+<div class ="button-bottom">
+<p><button type="button" class="btn btn-dark"><%= link_to "Add a new review", new_restaurant_review_path(@restaurant) %> </button>  </p>
+<p><button type="button" class="btn btn-dark"><%= link_to 'Back', restaurants_path %> </button> </p>
 
-<p> <%= link_to "Add a new review", new_restaurant_review_path(@restaurant) %> <p>
+</div>
